@@ -43,13 +43,11 @@ def valid_move?(index)
 end 
 
 def turn_count 
-    count = @board - [" "]
-    count.length
+    @board.count{|token| token == "X" || token == "O"}
 end 
 
 def current_player
-    current_turn = turn_count + 1
-    current_turn.odd? ? "X" : "O"
+    turn_count.even? ? "X" : "O"
 end 
 
 
